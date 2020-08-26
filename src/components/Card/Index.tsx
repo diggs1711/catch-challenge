@@ -1,13 +1,19 @@
 import React from 'react'
+import styles from '../Card/Card.module.css'
 
 type CardProps = {
-  image: string | undefined,
+  image: CardImageOptions
+}
+
+type CardImageOptions = {
+  url: string | undefined,
+  alt: string
 }
 
 const Card: React.FC<CardProps> = ({image, children}) => {
   return (
-    <div>
-      {image ? <img src={image} alt={''}/> : null}
+    <div className={styles.card}>
+      {image ? <img className={styles.card__image} src={image.url} alt={image.alt}/> : null}
       <section>
         {children}
       </section>

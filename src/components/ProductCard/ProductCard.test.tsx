@@ -1,6 +1,7 @@
 import React from 'react'
 import { render, screen } from "@testing-library/react"
 import ProductCard from './Index'
+import centsToDollarConverter, { displayCentsAsDollars } from '../../utils/centsToDollarConverters/centsToDollarConverter'
 
 describe('ProductCard', () => {
   it("renders image and card details", () => {
@@ -17,8 +18,8 @@ describe('ProductCard', () => {
 
     expect(screen.getByRole('img')).toBeInTheDocument()
     expect(screen.getByText(testDetails.name)).toBeInTheDocument()
-    expect(screen.queryByText(testDetails.retailPrice.toString())).toBeNull()
-    expect(screen.getByText(testDetails.salePrice.toString())).toBeInTheDocument()
+    expect(screen.queryByText(displayCentsAsDollars(testDetails.retailPrice).toString())).toBeNull()
+    expect(screen.getByText(displayCentsAsDollars(testDetails.salePrice).toString())).toBeInTheDocument()
   })
 
   it("renders retail price with strikethrough when retail is greater than zero", () => {
@@ -33,10 +34,10 @@ describe('ProductCard', () => {
 
     const { container } = render(<ProductCard details={testDetails} />)
 
-    expect(screen.queryByText(testDetails.retailPrice.toString())).toBeInTheDocument()
+    expect(screen.queryByText(displayCentsAsDollars(testDetails.retailPrice).toString())).toBeInTheDocument()
   })
 
-  it("renders product with quantity available equal 0 with sold out", () => {
+  it("renders product with quantity available equal 0 with sold out tag", () => {
     const testDetails = {
       "id": "ffc4211a-fb81-45e3-b1d8-2d399a92aa89",
       "name": "Buy Olaplex No. 3 Hair Perfector",
@@ -48,9 +49,8 @@ describe('ProductCard', () => {
 
     const { container } = render(<ProductCard details={testDetails} />)
 
-    expect(screen.getByText(testDetails.salePrice.toString())).toBeInTheDocument()
-    expect(screen.getByText("Sold out")).toBeInTheDocument()
+    expect(screen.getByText(displayCentsAsDollars(testDetails.salePrice).toString())).toBeInTheDocument()
+    expect(screen.getByText(/SOLD OUT/ig)).toBeInTheDocument()
   })
-
 
 })

@@ -1,0 +1,18 @@
+.card {
+    /* border: 1px solid #ccc; */
+    max-width: 300px;
+    margin: 1em 0.5em;
+    border-radius: 0.5em;
+    box-shadow: 1px 1px 15px 0.1px #ccc;
+    cursor: pointer;
+    transition: .2s all linear;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.card__image {
+    object-position: center;
+    object-fit: cover;
+}

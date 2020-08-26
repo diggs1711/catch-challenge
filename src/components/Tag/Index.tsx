@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from './Tag.module.css'
 
 type TagProps = {
   title: string
@@ -6,8 +7,8 @@ type TagProps = {
 
 const Tag: React.FC<TagProps> = ({title}) => {
   return (
-    <div>
-      {title}
+    <div className={styles.tag}>
+      {title.toLocaleUpperCase()}
     </div>
   )
 }

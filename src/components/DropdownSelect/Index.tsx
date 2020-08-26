@@ -1,4 +1,5 @@
 import React, { ChangeEvent } from 'react'
+import styles from './DropdownSelect.module.css'
 
 type OptionProps = {
     name: string
@@ -12,13 +13,10 @@ type DropdownSelectProps = {
 }
 
 const DropdownSelect = ({ onChange, options, value }: DropdownSelectProps) => {
-
     return (
-        <div>
-            <select value={value} onChange={onChange} name='sort'>
-                {options.map((option) => (<option key={option.id} value={option.name} >{option.name}</option>)) }
-            </select>
-        </div>
+        <select className={styles.dropdown} value={value} onChange={onChange} name='sort'>
+            {options.map((option) => (<option key={option.id} value={option.name} >{option.name}</option>)) }
+        </select>
     )
 }
 
