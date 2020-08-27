@@ -4,7 +4,7 @@ React hooks is used for state managemnt as the state is not complex enough to wa
 
 To query the data, the native fetch function is used.
 
-Jest and react-testing-library is used in combination for compreshive unit and integration tests
+Both jest and react-testing-library are used in combination for compreshive unit and integration tests
 
 ### Scripts
 
