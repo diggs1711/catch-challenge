@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card renders when no image is supplied 1`] = `
+<div>
+  <div
+    class="card"
+  >
+    <section>
+      <h6>
+        Test title
+      </h6>
+    </section>
+  </div>
+</div>
+`;

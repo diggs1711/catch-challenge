@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductCardInfo displays large text 1`] = `
+<div>
+  <div
+    style="font-size: 16px; font-weight: normal;"
+  >
+    This is a test
+  </div>
+</div>
+`;
+
+exports[`ProductCardInfo displays small text by default 1`] = `
+<div>
+  <div
+    style="font-size: 16px; font-weight: normal;"
+  >
+    This is a test
+  </div>
+</div>
+`;

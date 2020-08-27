@@ -1,24 +1,24 @@
-import React from 'react'
-import styles from '../Card/Card.module.css'
-
-type CardProps = {
-  image: CardImageOptions
-}
+import React from "react";
+import styles from "../Card/Card.module.css";
 
 type CardImageOptions = {
-  url: string | undefined,
-  alt: string
-}
+  url: string | undefined;
+  alt: string;
+};
 
-const Card: React.FC<CardProps> = ({image, children}) => {
+type CardProps = {
+  image?: CardImageOptions;
+};
+
+const Card: React.FC<CardProps> = ({ image, children }) => {
   return (
     <div className={styles.card}>
-      {image ? <img className={styles.card__image} src={image.url} alt={image.alt}/> : null}
-      <section>
-        {children}
-      </section>
+      {image ? (
+        <img className={styles.card__image} src={image.url} alt={image.alt} />
+      ) : null}
+      <section>{children}</section>
     </div>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;
