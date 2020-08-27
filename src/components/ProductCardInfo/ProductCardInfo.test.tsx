@@ -12,4 +12,11 @@ describe("ProductCardInfo", () => {
     const { container } = render(<ProductCardInfo text="This is a test" />);
     expect(container).toMatchSnapshot();
   });
+
+  it("displays strikethrough", () => {
+    const { container } = render(
+      <ProductCardInfo strikethrough text="This is a test" />
+    );
+    expect(container).toMatchSnapshot();
+  });
 });

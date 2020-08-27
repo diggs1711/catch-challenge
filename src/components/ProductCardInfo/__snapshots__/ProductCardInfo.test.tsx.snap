@@ -19,3 +19,13 @@ exports[`ProductCardInfo displays small text by default 1`] = `
   </div>
 </div>
 `;
+
+exports[`ProductCardInfo displays strikethrough 1`] = `
+<div>
+  <div
+    style="font-size: 16px; font-weight: normal; text-decoration: line-through;"
+  >
+    This is a test
+  </div>
+</div>
+`;

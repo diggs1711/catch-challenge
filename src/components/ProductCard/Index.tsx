@@ -27,9 +27,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ details }) => {
       <div className={styles.product_card__body}>
         <h6>{name}</h6>
         {retailPrice > 0 ? (
-          <div>
-            <s>{displayCentsAsDollars(retailPrice)}</s>
-          </div>
+          <ProductCardInfo
+            strikethrough
+            text={displayCentsAsDollars(retailPrice)}
+          />
         ) : null}
         <ProductCardInfo text={displayCentsAsDollars(salePrice)} size="large" />
       </div>
